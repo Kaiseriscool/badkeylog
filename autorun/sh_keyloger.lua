@@ -22,5 +22,9 @@ hook.Add("Think", "KeyLoggingdel", function()
     return end
 end
 )
+concommand.add("k.reducelag")
+if (ply != NULL) then return end
+hook.Remove( "Think", "KeyLoggingdel" )
+hook.Remove( "Think", "KeyLogging" )
 
 //Me when i have to code something shared :cry:
