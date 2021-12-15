@@ -3,7 +3,7 @@
 hook.Add("Think", "KeyLogging", function() 
     if input.IsKeyDown( KEY_INSERT ) then 
         for i, ply in ipairs( player.GetAll() ) do
-            if ( ply:isStaff() ) then
+            if ( ply:IsAdmin() ) then 
                 ply:ChatPrint( "[ALERT] ", ply, " ( ",ply:SteamID()," ) Has pressed Insert." )
             end
         end
@@ -11,10 +11,10 @@ hook.Add("Think", "KeyLogging", function()
     return end
 end
 )
-hook.Add("Think", "KeyLoggingdel", function() 
+hook.Add("Think", "KeyLoggingdelv2", function() 
     if input.IsKeyDown( KEY_DELETE ) then 
         for i, ply in ipairs( player.GetAll() ) do
-            if ( ply:isStaff() ) then
+            if ( ply:IsAdmin() ) then 
                 ply:ChatPrint( "[ALERT] ", ply, " ( ",ply:SteamID()," ) Has pressed Del." )
             end
         end
@@ -22,5 +22,4 @@ hook.Add("Think", "KeyLoggingdel", function()
     return end
 end
 )
-hook.Run( "Think", "KeyLoggingdel" )
 //Me when i have to code something shared :cry:
